@@ -70,10 +70,10 @@ const MainRouter: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-between">
+    <div className="min-h-screen flex flex-col justify-between overflow-x-hidden w-full max-w-full">
       <QuickPageSwitcher />
       <Navbar />
-      <div className="flex-1 pt-4">
+      <div className="flex-1 pt-4 w-full max-w-full">
         {renderPage()}
       </div>
       <Footer />

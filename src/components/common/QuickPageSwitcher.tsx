@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useApp } from '../../context/AppContext';
 import { PageId, UserRole } from '../../types';
-import { Compass, UserCheck, ShieldAlert, Layers, ChevronDown, Sparkles } from 'lucide-react';
+import { Layers, ChevronDown, Sparkles } from 'lucide-react';
 
 export const QuickPageSwitcher: React.FC = () => {
   const { currentPage, setCurrentPage, userRole, setUserRole } = useApp();
@@ -28,32 +28,34 @@ export const QuickPageSwitcher: React.FC = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white text-xs py-1.5 px-4 border-b border-indigo-500/20 sticky top-0 z-50 shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        {/* Brand & Demo Switcher Title */}
-        <div className="flex items-center gap-2">
+    <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white text-xs py-1.5 px-3 sm:px-4 border-b border-indigo-500/20 sticky top-0 z-50 shadow-md w-full max-w-full overflow-hidden">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+        {/* Brand */}
+        <div className="flex items-center gap-1.5 shrink-0">
           <span className="flex h-2 w-2 relative">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
-          <span className="font-extrabold tracking-wide text-indigo-200 uppercase text-[10px] hidden sm:inline">
-            DateMentor Demo Navigator
+          <span className="font-extrabold tracking-wide text-indigo-200 uppercase text-[9px] sm:text-[10px]">
+            Demo Navigator
           </span>
         </div>
 
         {/* Center: Dropdown to pick all 17 pages */}
-        <div className="relative">
+        <div className="relative flex-1 max-w-[200px] sm:max-w-xs">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-indigo-900/60 hover:bg-indigo-800/80 border border-indigo-500/30 text-indigo-100 font-semibold transition-all"
+            className="w-full flex items-center justify-between gap-1 px-2.5 py-1 rounded-lg bg-indigo-900/60 hover:bg-indigo-800/80 border border-indigo-500/30 text-indigo-100 text-[11px] sm:text-xs font-semibold transition-all truncate"
           >
-            <Layers className="w-3.5 h-3.5 text-indigo-400" />
-            <span>Active Page: <strong className="text-white capitalize">{currentPage.replace('-', ' ')}</strong></span>
-            <ChevronDown className="w-3.5 h-3.5 text-indigo-300" />
+            <div className="flex items-center gap-1 truncate">
+              <Layers className="w-3.5 h-3.5 text-indigo-400 shrink-0" />
+              <span className="truncate">Page: <strong className="text-white capitalize">{currentPage.replace('-', ' ')}</strong></span>
+            </div>
+            <ChevronDown className="w-3.5 h-3.5 text-indigo-300 shrink-0" />
           </button>
 
           {isOpen && (
-            <div className="absolute top-full left-0 sm:left-auto sm:right-0 mt-1 w-64 max-h-96 overflow-y-auto glass-card bg-slate-900/95 border border-indigo-500/40 rounded-xl shadow-2xl p-2 z-50">
+            <div className="absolute top-full left-0 right-0 sm:right-auto sm:w-64 max-h-80 overflow-y-auto glass-card bg-slate-900/95 border border-indigo-500/40 rounded-xl shadow-2xl p-2 z-50">
               <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-2 py-1 border-b border-slate-800">
                 Jump to Any of 17 Pages
               </div>
@@ -65,7 +67,7 @@ export const QuickPageSwitcher: React.FC = () => {
                       setCurrentPage(p.id);
                       setIsOpen(false);
                     }}
-                    className={`w-full text-left px-2.5 py-1.5 rounded-md text-xs transition-colors flex items-center justify-between ${
+                    className={`w-full text-left px-2.5 py-2 rounded-md text-xs transition-colors flex items-center justify-between ${
                       currentPage === p.id
                         ? 'bg-indigo-600 font-bold text-white'
                         : 'text-slate-300 hover:bg-slate-800 hover:text-white'
@@ -81,8 +83,7 @@ export const QuickPageSwitcher: React.FC = () => {
         </div>
 
         {/* Right: Quick Role Switcher */}
-        <div className="flex items-center gap-1.5">
-          <span className="text-slate-400 text-[10px] hidden md:inline">Role:</span>
+        <div className="flex items-center gap-1 shrink-0">
           {(['user', 'coach', 'admin'] as UserRole[]).map((r) => (
             <button
               key={r}
@@ -92,7 +93,7 @@ export const QuickPageSwitcher: React.FC = () => {
                 if (r === 'coach') setCurrentPage('coach-dashboard');
                 if (r === 'admin') setCurrentPage('admin-dashboard');
               }}
-              className={`px-2 py-0.5 rounded text-[10px] font-bold capitalize transition-colors ${
+              className={`px-1.5 sm:px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-bold capitalize transition-colors ${
                 userRole === r
                   ? 'bg-indigo-500 text-white shadow-sm'
                   : 'bg-slate-800/80 text-slate-400 hover:text-slate-200'
