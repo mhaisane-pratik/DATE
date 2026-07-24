@@ -16,8 +16,8 @@ export const AboutPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
           <div className="lg:col-span-5 relative">
             <img
-              src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop"
-              alt="Coach Pratik"
+              src="/images/prateek_user.png"
+              alt="Prateek Mhaisane"
               className="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl object-cover ring-4 ring-indigo-500/50 shadow-2xl mx-auto"
             />
             <span className="absolute bottom-2 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-bg text-white font-extrabold text-xs uppercase shadow-md">

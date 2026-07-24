@@ -56,7 +56,7 @@ export const MOCK_COACHES: Coach[] = [
     id: 'coach-prateek',
     name: 'Prateek Mhaisane',
     title: 'Founder & Lead Dating & Relationship Strategist',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop',
+    avatar: '/images/prateek_user.png',
     coverImage: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop',
     rating: 4.99,
     reviewsCount: 348,
