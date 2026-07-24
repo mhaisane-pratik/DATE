@@ -51,7 +51,7 @@ export const Home: React.FC = () => {
                 className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-50 dark:bg-indigo-950/60 border border-indigo-200 dark:border-indigo-800/60 text-indigo-600 dark:text-indigo-400 text-xs font-bold shadow-sm"
               >
                 <Sparkles className="w-3.5 h-3.5" />
-                <span>Coach Pratik's Official Relationship Platform</span>
+                <span>Prateek Mhaisane's Relationship Coaching Platform</span>
               </motion.div>
 
               {/* Main Headline */}
@@ -72,7 +72,7 @@ export const Home: React.FC = () => {
                 transition={{ delay: 0.2 }}
                 className="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed"
               >
-                Break toxicity cycles, rebuild dating confidence, and deepen intimacy. Connect with certified psychologists and Gottman-trained relationship mentors for 1-on-1 video sessions.
+                Transform your dating confidence & emotional intimacy with Founder & Lead Coach <strong>Prateek Mhaisane</strong> (+91 9737372183) and his team of certified experts.
               </motion.p>
 
               {/* Search Bar Widget */}

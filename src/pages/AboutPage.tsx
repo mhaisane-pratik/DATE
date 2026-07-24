@@ -30,13 +30,13 @@ export const AboutPage: React.FC = () => {
               <Sparkles className="w-3.5 h-3.5" /> Founder's Story
             </span>
             <h1 className="text-3xl sm:text-5xl font-black tracking-tight">
-              Meet Coach <span className="gradient-text">Pratik</span>
+              Meet Founder <span className="gradient-text">Prateek Mhaisane</span>
             </h1>
             <p className="text-xs sm:text-base text-slate-300 leading-relaxed">
               "I built DateMentor to give singles and couples a safe, evidence-based, and highly actionable platform to transform their love lives. Relationship confidence isn't luck—it's a skill you can master with the right guidance."
             </p>
             <p className="text-xs text-slate-400">
-              Over the last 10+ years, Pratik has logged over 4,800 coaching hours, helped 1,250+ clients, and built a handpicked team of certified associate Gottman psychologists.
+              Over the last 10+ years, Prateek Mhaisane (+91 9737372183) has logged over 4,800 coaching hours, helped 1,250+ clients, and built a handpicked team of certified associate Gottman psychologists.
             </p>
 
             <div className="pt-4 flex flex-wrap justify-center lg:justify-start gap-4">

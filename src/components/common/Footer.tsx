@@ -149,7 +149,7 @@ export const Footer: React.FC = () => {
             <span className="flex items-center gap-1"><Award className="w-3.5 h-3.5 text-amber-400" /> Top Rated 2026</span>
           </div>
 
-          <p>© {new Date().getFullYear()} DateMentor Inc. All rights reserved. Meet Your Friends Platform.</p>
+          <p>© {new Date().getFullYear()} DateMentor Inc. Founded by Prateek Mhaisane (+91 9737372183). All rights reserved.</p>
         </div>
       </div>
     </footer>

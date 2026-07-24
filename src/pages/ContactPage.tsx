@@ -34,15 +34,15 @@ export const ContactPage: React.FC = () => {
             
             <div className="flex items-center gap-3 text-xs text-slate-600 dark:text-slate-300">
               <Mail className="w-4 h-4 text-indigo-500" />
-              <span>support@datementor.com</span>
+              <span>prateek@datementor.com</span>
             </div>
             <div className="flex items-center gap-3 text-xs text-slate-600 dark:text-slate-300">
               <Phone className="w-4 h-4 text-indigo-500" />
-              <span>+1 (800) 555-DATE</span>
+              <span>+91 9737372183 (Direct Call & WhatsApp)</span>
             </div>
             <div className="flex items-center gap-3 text-xs text-slate-600 dark:text-slate-300">
               <MapPin className="w-4 h-4 text-indigo-500" />
-              <span>548 Market St, San Francisco, CA 94104</span>
+              <span>Prateek Mhaisane HQ / Online Worldwide</span>
             </div>
           </div>
         </div>

@@ -41,8 +41,8 @@ const AppContext = createContext<AppContextType | undefined>(undefined);
 export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [userRole, setUserRole] = useState<UserRole>('user');
-  const [selectedCoachId, setSelectedCoachId] = useState<string>('coach-pratik');
-  const [wishlist, setWishlist] = useState<string[]>(['coach-pratik', 'coach-elena']);
+  const [selectedCoachId, setSelectedCoachId] = useState<string>('coach-prateek');
+  const [wishlist, setWishlist] = useState<string[]>(['coach-prateek', 'coach-elena']);
   const [toasts, setToasts] = useState<ToastMessage[]>([]);
   const [userSessions, setUserSessions] = useState<BookingSession[]>(MOCK_USER_SESSIONS);
   const [searchFilter, setSearchFilter] = useState<string>('');
