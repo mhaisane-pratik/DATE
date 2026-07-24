@@ -154,7 +154,7 @@ export const Home: React.FC = () => {
                     <img
                       src={MOCK_COACHES[0].avatar}
                       alt={MOCK_COACHES[0].name}
-                      className="w-16 h-16 rounded-2xl object-cover ring-2 ring-indigo-500 shadow-md"
+                      className="w-16 h-16 rounded-2xl object-cover object-top ring-2 ring-indigo-500 shadow-md"
                     />
                     <div>
                       <div className="flex items-center gap-1">

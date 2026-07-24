@@ -46,7 +46,7 @@ export const CoachCard: React.FC<CoachCardProps> = ({ coach }) => {
             <img
               src={coach.avatar}
               alt={coach.name}
-              className="w-16 h-16 rounded-full object-cover ring-2 ring-indigo-500/20 group-hover:ring-indigo-500 transition-all shadow-md"
+              className="w-16 h-16 rounded-full object-cover object-top ring-2 ring-indigo-500/20 group-hover:ring-indigo-500 transition-all shadow-md"
             />
             {coach.isAvailableToday && (
               <span className="absolute bottom-0 right-0 w-4 h-4 bg-emerald-500 border-2 border-white dark:border-slate-800 rounded-full" title="Available Today" />

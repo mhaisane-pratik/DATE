@@ -85,7 +85,7 @@ export const CoachProfile: React.FC = () => {
               <img
                 src={coach.avatar}
                 alt={coach.name}
-                className="w-28 h-28 sm:w-36 sm:h-36 rounded-3xl object-cover ring-4 ring-white dark:ring-slate-800 shadow-2xl"
+                className="w-28 h-28 sm:w-36 sm:h-36 rounded-3xl object-cover object-top ring-4 ring-white dark:ring-slate-800 shadow-2xl"
               />
               {coach.isAvailableToday && (
                 <span className="absolute bottom-2 right-2 px-2.5 py-1 rounded-full bg-emerald-500 text-white font-extrabold text-[10px] uppercase shadow-md">

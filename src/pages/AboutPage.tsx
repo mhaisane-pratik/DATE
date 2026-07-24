@@ -18,7 +18,7 @@ export const AboutPage: React.FC = () => {
             <img
               src="/images/prateek_user.png"
               alt="Prateek Mhaisane"
-              className="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl object-cover ring-4 ring-indigo-500/50 shadow-2xl mx-auto"
+              className="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl object-cover object-top ring-4 ring-indigo-500/50 shadow-2xl mx-auto"
             />
             <span className="absolute bottom-2 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-bg text-white font-extrabold text-xs uppercase shadow-md">
               Founder & Lead Coach

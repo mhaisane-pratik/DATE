@@ -243,11 +243,11 @@ export const Navbar: React.FC = () => {
               <img
                 src={
                   userRole === 'coach'
-                    ? 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop'
+                    ? '/images/prateek_user.png'
                     : 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop'
                 }
                 alt="Profile"
-                className="w-7 h-7 rounded-lg object-cover ring-1 ring-indigo-500/40"
+                className="w-7 h-7 rounded-lg object-cover object-top ring-1 ring-indigo-500/40"
               />
               <span className="text-xs font-bold text-slate-800 dark:text-slate-200 hidden sm:inline capitalize">
                 {userRole}
