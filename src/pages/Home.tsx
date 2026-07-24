@@ -188,20 +188,7 @@ export const Home: React.FC = () => {
                   </div>
                 </motion.div>
 
-                {/* Floating Glass Widget 1 */}
-                <motion.div
-                  animate={{ y: [0, -10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute -top-6 -left-8 glass-panel bg-white/90 dark:bg-slate-900/90 p-3.5 rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 flex items-center gap-3 z-30 hidden sm:flex"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-950 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-bold">
-                    <ShieldCheck className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-slate-900 dark:text-white">100% Gottman Verified</div>
-                    <div className="text-[10px] text-slate-500 dark:text-slate-400">Clinical Background Checks</div>
-                  </div>
-                </motion.div>
+
 
                 {/* Floating Glass Widget 2 */}
                 <motion.div
