@@ -11,9 +11,8 @@ import {
   Sparkles,
   User,
   LogOut,
-  Calendar,
-  MessageSquare,
   ShieldCheck,
+  ShieldAlert,
   Award,
   BookOpen,
   HelpCircle,
@@ -45,7 +44,7 @@ export const Navbar: React.FC = () => {
         {/* Brand Logo */}
         <button
           onClick={() => setCurrentPage('home')}
-          className="flex items-center gap-2.5 group focus:outline-none"
+          className="flex items-center gap-2.5 group focus:outline-none shrink-0"
         >
           <div className="w-10 h-10 rounded-xl gradient-bg flex items-center justify-center text-white shadow-md shadow-indigo-500/30 group-hover:scale-105 transition-transform">
             <Heart className="w-5 h-5 fill-white" />
@@ -73,6 +72,19 @@ export const Navbar: React.FC = () => {
             Home
           </button>
 
+          {/* DETECTIVE AGENCY BUTTON - PROMINENT AMBER BADGE */}
+          <button
+            onClick={() => setCurrentPage('detective-agency')}
+            className={`px-3.5 py-2 rounded-xl text-sm font-extrabold transition-all flex items-center gap-1.5 border shadow-sm ${
+              currentPage === 'detective-agency'
+                ? 'text-amber-500 bg-amber-100 dark:bg-amber-950/80 border-amber-500'
+                : 'text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 border-amber-300 dark:border-amber-800/60 hover:bg-amber-100 dark:hover:bg-amber-900/60'
+            }`}
+          >
+            <ShieldAlert className="w-4 h-4 text-amber-500 shrink-0" />
+            <span>Detective Agency</span>
+          </button>
+
           {/* Mega Menu Trigger */}
           <div className="relative" onMouseEnter={() => setMegaMenuOpen(true)} onMouseLeave={() => setMegaMenuOpen(false)}>
             <button
@@ -97,7 +109,29 @@ export const Navbar: React.FC = () => {
                   className="absolute top-full left-0 mt-2 w-[600px] glass-card bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-2xl p-5 grid grid-cols-2 gap-4 z-50"
                 >
                   <div className="space-y-2">
-                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider px-2 mb-2">Specialties</h4>
+                    <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider px-2 mb-2">Specialties & Investigations</h4>
+                    
+                    {/* Detective Agency Featured Entry */}
+                    <button
+                      onClick={() => {
+                        setCurrentPage('detective-agency');
+                        setMegaMenuOpen(false);
+                      }}
+                      className="w-full text-left p-2 rounded-xl bg-amber-50 dark:bg-amber-950/50 hover:bg-amber-100 dark:hover:bg-amber-900/60 flex items-center gap-3 transition-colors border border-amber-200 dark:border-amber-800/60"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-amber-500 text-slate-950 flex items-center justify-center font-bold">
+                        <ShieldAlert className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-black text-amber-700 dark:text-amber-400">
+                          Detective & Verification Agency
+                        </div>
+                        <div className="text-[11px] text-slate-500 dark:text-slate-400 line-clamp-1">
+                          Pre-marital background checks & loyalty audits
+                        </div>
+                      </div>
+                    </button>
+
                     {MOCK_CATEGORIES.map((cat) => (
                       <button
                         key={cat.id}
@@ -129,38 +163,26 @@ export const Navbar: React.FC = () => {
                         <Award className="w-3 h-3" /> Certified Guarantee
                       </span>
                       <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-2">
-                        Not sure which coach is right for you?
+                        Not sure which service you need?
                       </h4>
                       <p className="text-xs text-slate-600 dark:text-slate-300 mb-4">
-                        Take our 2-minute relational assessment to get matched with the top 3 coaches for your exact goals.
+                        Take our 2-minute assessment quiz or consult directly with Founder Prateek Mhaisane (+91 9737372183).
                       </p>
                     </div>
                     <button
                       onClick={() => {
-                        setCurrentPage('browse');
+                        setCurrentPage('quiz');
                         setMegaMenuOpen(false);
                       }}
                       className="w-full py-2 px-3 rounded-lg text-xs font-bold text-white gradient-bg hover:opacity-90 transition-opacity text-center shadow-md"
                     >
-                      Find My Coach Match
+                      Take 2-Min Match Quiz
                     </button>
                   </div>
                 </motion.div>
               )}
             </AnimatePresence>
           </div>
-
-          <button
-            onClick={() => setCurrentPage('detective-agency')}
-            className={`px-3 py-2 rounded-xl text-sm font-semibold transition-colors flex items-center gap-1 ${
-              currentPage === 'detective-agency'
-                ? 'text-amber-500 bg-amber-50 dark:bg-amber-950/40 font-bold'
-                : 'text-slate-600 dark:text-slate-300 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-slate-800/60'
-            }`}
-          >
-            <ShieldCheck className="w-4 h-4 text-amber-500" />
-            <span>Detective Agency</span>
-          </button>
 
           <button
             onClick={() => setCurrentPage('couples-counseling')}
@@ -174,14 +196,14 @@ export const Navbar: React.FC = () => {
           </button>
 
           <button
-            onClick={() => setCurrentPage('quiz')}
+            onClick={() => setCurrentPage('pricing')}
             className={`px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${
-              currentPage === 'quiz'
+              currentPage === 'pricing'
                 ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40'
                 : 'text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
             }`}
           >
-            Assessment Quiz
+            Pricing
           </button>
 
           <button
@@ -205,23 +227,12 @@ export const Navbar: React.FC = () => {
           >
             Blog
           </button>
-
-          <button
-            onClick={() => setCurrentPage('help')}
-            className={`px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${
-              currentPage === 'help'
-                ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40'
-                : 'text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
-            }`}
-          >
-            Help
-          </button>
         </nav>
 
         {/* Header Right Actions */}
         <div className="flex items-center gap-3">
           {/* Quick Nav Search */}
-          <form onSubmit={handleSearchSubmit} className="relative hidden sm:block w-44 md:w-56">
+          <form onSubmit={handleSearchSubmit} className="relative hidden sm:block w-36 md:w-48">
             <input
               type="text"
               placeholder="Search coaches..."
@@ -247,7 +258,7 @@ export const Navbar: React.FC = () => {
               setCurrentPage('user-dashboard');
             }}
             className="relative p-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:text-rose-500 transition-colors hidden sm:block"
-            title="Saved Coaches Wishlist"
+            title="Saved Wishlist"
           >
             <Heart className="w-4 h-4" />
             {wishlist.length > 0 && (
@@ -285,7 +296,7 @@ export const Navbar: React.FC = () => {
                     Logged in as {userRole}
                   </div>
                   <div className="text-[10px] text-slate-500 dark:text-slate-400">
-                    {userRole === 'user' ? 'alex.user@datementor.com' : userRole === 'coach' ? 'pratik@datementor.com' : 'admin@datementor.com'}
+                    {userRole === 'user' ? 'alex.user@datementor.com' : userRole === 'coach' ? 'prateek@datementor.com' : 'admin@datementor.com'}
                   </div>
                 </div>
 
@@ -365,10 +376,28 @@ export const Navbar: React.FC = () => {
                 Home
               </button>
               <button
+                onClick={() => { setCurrentPage('detective-agency'); setMobileMenuOpen(false); }}
+                className="p-2.5 rounded-xl text-left font-bold text-amber-500 hover:bg-amber-50 dark:hover:bg-amber-950/60"
+              >
+                🕵️‍♂️ Detective Agency
+              </button>
+              <button
                 onClick={() => { setCurrentPage('browse'); setMobileMenuOpen(false); }}
                 className="p-2.5 rounded-xl text-left font-bold text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-indigo-950/60"
               >
                 Browse Coaches
+              </button>
+              <button
+                onClick={() => { setCurrentPage('couples-counseling'); setMobileMenuOpen(false); }}
+                className="p-2.5 rounded-xl text-left font-bold text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-indigo-950/60"
+              >
+                Couples Therapy
+              </button>
+              <button
+                onClick={() => { setCurrentPage('quiz'); setMobileMenuOpen(false); }}
+                className="p-2.5 rounded-xl text-left font-bold text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-indigo-950/60"
+              >
+                Match Quiz
               </button>
               <button
                 onClick={() => { setCurrentPage('pricing'); setMobileMenuOpen(false); }}
@@ -381,12 +410,6 @@ export const Navbar: React.FC = () => {
                 className="p-2.5 rounded-xl text-left font-bold text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-indigo-950/60"
               >
                 About Us
-              </button>
-              <button
-                onClick={() => { setCurrentPage('blog'); setMobileMenuOpen(false); }}
-                className="p-2.5 rounded-xl text-left font-bold text-slate-800 dark:text-slate-200 hover:bg-indigo-50 dark:hover:bg-indigo-950/60"
-              >
-                Blog & Articles
               </button>
               <button
                 onClick={() => { setCurrentPage('contact'); setMobileMenuOpen(false); }}

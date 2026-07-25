@@ -107,7 +107,7 @@ export const Home: React.FC = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-                className="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-2"
+                className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2"
               >
                 <button
                   onClick={() => setCurrentPage('browse')}
@@ -115,6 +115,14 @@ export const Home: React.FC = () => {
                 >
                   Book a Session
                   <ArrowRight className="w-4 h-4" />
+                </button>
+
+                <button
+                  onClick={() => setCurrentPage('detective-agency')}
+                  className="px-6 py-3 rounded-xl text-sm font-extrabold text-slate-950 bg-amber-400 hover:bg-amber-300 shadow-lg transition-all flex items-center gap-2 border border-amber-500"
+                >
+                  <ShieldCheck className="w-4 h-4" />
+                  Detective Agency 🕵️‍♂️
                 </button>
 
                 <button
