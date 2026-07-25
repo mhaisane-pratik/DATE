@@ -15,7 +15,10 @@ export type PageId =
   | 'register'
   | 'forgot-password'
   | 'privacy'
-  | 'terms';
+  | 'terms'
+  | 'detective-agency'
+  | 'quiz'
+  | 'couples-counseling';
 
 export type UserRole = 'user' | 'coach' | 'admin';
 
@@ -117,4 +120,13 @@ export interface ToastMessage {
   type: 'success' | 'error' | 'info' | 'warning';
   title: string;
   message: string;
+}
+
+export interface DetectivePackage {
+  id: string;
+  title: string;
+  price: number;
+  description: string;
+  features: string[];
+  isPopular?: boolean;
 }

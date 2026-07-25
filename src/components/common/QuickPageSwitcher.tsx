@@ -10,21 +10,24 @@ export const QuickPageSwitcher: React.FC = () => {
   const pages: { id: PageId; label: string; group: string }[] = [
     { id: 'home', label: '1. Home Page', group: 'Main' },
     { id: 'browse', label: '2. Browse Coaches', group: 'Main' },
-    { id: 'coach-profile', label: '3. Coach Profile', group: 'Main' },
-    { id: 'booking', label: '4. Booking Page Wizard', group: 'Main' },
-    { id: 'user-dashboard', label: '5. User Dashboard', group: 'Dashboards' },
-    { id: 'coach-dashboard', label: '6. Coach Dashboard', group: 'Dashboards' },
-    { id: 'admin-dashboard', label: '7. Admin Dashboard', group: 'Dashboards' },
-    { id: 'pricing', label: '8. Pricing Page', group: 'Information' },
-    { id: 'about', label: '9. About Us', group: 'Information' },
-    { id: 'contact', label: '10. Contact Us', group: 'Information' },
-    { id: 'blog', label: '11. Blog & Articles', group: 'Content' },
-    { id: 'help', label: '12. Help Center', group: 'Content' },
-    { id: 'login', label: '13. Login Page', group: 'Auth' },
-    { id: 'register', label: '14. Register Page', group: 'Auth' },
-    { id: 'forgot-password', label: '15. Forgot Password', group: 'Auth' },
-    { id: 'privacy', label: '16. Privacy Policy', group: 'Legal' },
-    { id: 'terms', label: '17. Terms & Conditions', group: 'Legal' }
+    { id: 'detective-agency', label: '3. Detective Agency 🕵️‍♂️', group: 'Specialty' },
+    { id: 'couples-counseling', label: '4. Couples Counseling 💑', group: 'Specialty' },
+    { id: 'quiz', label: '5. Assessment Quiz 🎯', group: 'Specialty' },
+    { id: 'coach-profile', label: '6. Coach Profile', group: 'Main' },
+    { id: 'booking', label: '7. Booking Page Wizard', group: 'Main' },
+    { id: 'user-dashboard', label: '8. User Dashboard', group: 'Dashboards' },
+    { id: 'coach-dashboard', label: '9. Coach Dashboard', group: 'Dashboards' },
+    { id: 'admin-dashboard', label: '10. Admin Dashboard', group: 'Dashboards' },
+    { id: 'pricing', label: '11. Pricing Page', group: 'Information' },
+    { id: 'about', label: '12. About Us', group: 'Information' },
+    { id: 'contact', label: '13. Contact Us', group: 'Information' },
+    { id: 'blog', label: '14. Blog & Articles', group: 'Content' },
+    { id: 'help', label: '15. Help Center', group: 'Content' },
+    { id: 'login', label: '16. Login Page', group: 'Auth' },
+    { id: 'register', label: '17. Register Page', group: 'Auth' },
+    { id: 'forgot-password', label: '18. Forgot Password', group: 'Auth' },
+    { id: 'privacy', label: '19. Privacy Policy', group: 'Legal' },
+    { id: 'terms', label: '20. Terms & Conditions', group: 'Legal' }
   ];
 
   return (
@@ -41,7 +44,7 @@ export const QuickPageSwitcher: React.FC = () => {
           </span>
         </div>
 
-        {/* Center: Dropdown to pick all 17 pages */}
+        {/* Center: Dropdown to pick all 20 pages */}
         <div className="relative flex-1 max-w-[200px] sm:max-w-xs">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -57,7 +60,7 @@ export const QuickPageSwitcher: React.FC = () => {
           {isOpen && (
             <div className="absolute top-full left-0 right-0 sm:right-auto sm:w-64 max-h-80 overflow-y-auto glass-card bg-slate-900/95 border border-indigo-500/40 rounded-xl shadow-2xl p-2 z-50">
               <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-2 py-1 border-b border-slate-800">
-                Jump to Any of 17 Pages
+                Jump to Any of 20 Pages
               </div>
               <div className="py-1">
                 {pages.map((p) => (

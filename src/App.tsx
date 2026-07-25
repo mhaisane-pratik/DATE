@@ -24,6 +24,9 @@ import { RegisterPage } from './pages/RegisterPage';
 import { ForgotPasswordPage } from './pages/ForgotPasswordPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
+import { DetectiveAgencyPage } from './pages/DetectiveAgencyPage';
+import { CouplesCounselingPage } from './pages/CouplesCounselingPage';
+import { QuizPage } from './pages/QuizPage';
 
 const MainRouter: React.FC = () => {
   const { currentPage } = useApp();
@@ -34,6 +37,12 @@ const MainRouter: React.FC = () => {
         return <Home />;
       case 'browse':
         return <BrowseCoaches />;
+      case 'detective-agency':
+        return <DetectiveAgencyPage />;
+      case 'couples-counseling':
+        return <CouplesCounselingPage />;
+      case 'quiz':
+        return <QuizPage />;
       case 'coach-profile':
         return <CoachProfile />;
       case 'booking':

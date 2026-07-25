@@ -151,14 +151,37 @@ export const Navbar: React.FC = () => {
           </div>
 
           <button
-            onClick={() => setCurrentPage('pricing')}
+            onClick={() => setCurrentPage('detective-agency')}
+            className={`px-3 py-2 rounded-xl text-sm font-semibold transition-colors flex items-center gap-1 ${
+              currentPage === 'detective-agency'
+                ? 'text-amber-500 bg-amber-50 dark:bg-amber-950/40 font-bold'
+                : 'text-slate-600 dark:text-slate-300 hover:text-amber-500 hover:bg-slate-100 dark:hover:bg-slate-800/60'
+            }`}
+          >
+            <ShieldCheck className="w-4 h-4 text-amber-500" />
+            <span>Detective Agency</span>
+          </button>
+
+          <button
+            onClick={() => setCurrentPage('couples-counseling')}
             className={`px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${
-              currentPage === 'pricing'
+              currentPage === 'couples-counseling'
                 ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40'
                 : 'text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
             }`}
           >
-            Pricing
+            Couples Therapy
+          </button>
+
+          <button
+            onClick={() => setCurrentPage('quiz')}
+            className={`px-3 py-2 rounded-xl text-sm font-semibold transition-colors ${
+              currentPage === 'quiz'
+                ? 'text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40'
+                : 'text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-100 dark:hover:bg-slate-800/60'
+            }`}
+          >
+            Assessment Quiz
           </button>
 
           <button
