@@ -117,7 +117,7 @@ export const CoachProfile: React.FC = () => {
           <div className="flex items-center gap-4 bg-slate-50 dark:bg-slate-900/60 p-4 rounded-2xl border border-slate-100 dark:border-slate-800">
             <div>
               <span className="text-[10px] text-slate-400 font-bold uppercase">Rate</span>
-              <div className="text-xl font-black text-slate-900 dark:text-white">${coach.hourlyRate}<span className="text-xs font-normal text-slate-400">/50m</span></div>
+              <div className="text-xl font-black text-slate-900 dark:text-white">₹{coach.hourlyRate.toLocaleString('en-IN')}<span className="text-xs font-normal text-slate-400">/50m</span></div>
             </div>
             <button
               onClick={handleBookSession}

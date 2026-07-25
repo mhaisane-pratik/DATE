@@ -143,18 +143,20 @@ export const BookingPage: React.FC = () => {
 
           <div className="p-4 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-left text-xs space-y-2 max-w-md mx-auto">
             <div className="flex justify-between text-slate-500">
-              <span>Session Fee</span>
-              <span>${bookingDraft.price}.00</span>
+              <span className="text-slate-500">Base Session Fee</span>
+              <span>₹{bookingDraft.price.toLocaleString('en-IN')}</span>
             </div>
-            {discountAmount > 0 && (
-              <div className="flex justify-between text-emerald-600 font-bold">
-                <span>Discount (SOULMATE20)</span>
-                <span>-${discountAmount}.00</span>
+
+            {couponApplied && (
+              <div className="flex justify-between text-xs text-emerald-500 font-bold">
+                <span>Coupon (SOULMATE20 - 20% Off)</span>
+                <span>-₹{discountAmount.toLocaleString('en-IN')}</span>
               </div>
             )}
-            <div className="flex justify-between font-extrabold text-slate-900 dark:text-white text-sm pt-2 border-t border-slate-200 dark:border-slate-800">
-              <span>Total Paid</span>
-              <span>${bookingDraft.price - discountAmount}.00 USD</span>
+
+            <div className="flex justify-between text-base font-black text-slate-900 dark:text-white pt-2 border-t border-slate-200 dark:border-slate-800">
+              <span>Total Amount</span>
+              <span>₹{(bookingDraft.price - discountAmount).toLocaleString('en-IN')} INR</span>
             </div>
           </div>
 
@@ -310,7 +312,7 @@ export const BookingPage: React.FC = () => {
                 disabled={isProcessing}
                 className="w-full py-4 rounded-xl text-sm font-extrabold text-white gradient-bg shadow-xl hover:opacity-95 active:scale-95 transition-all flex items-center justify-center gap-2"
               >
-                {isProcessing ? 'Processing Payment...' : `Pay $${bookingDraft.price - discountAmount}.00 & Confirm Booking`}
+                {isProcessing ? 'Processing Payment...' : `Pay ₹${(bookingDraft.price - discountAmount).toLocaleString('en-IN')} & Confirm Booking`}
               </button>
             </div>
           </div>

@@ -164,7 +164,7 @@ export const DetectiveAgencyPage: React.FC = () => {
                 <p className="text-xs text-slate-500 mt-1">{pkg.description}</p>
 
                 <div className="my-6">
-                  <span className="text-4xl font-black text-slate-900 dark:text-white">${pkg.price}</span>
+                  <span className="text-4xl font-black text-slate-900 dark:text-white">₹{pkg.price.toLocaleString('en-IN')}</span>
                   <span className="text-xs text-slate-400 font-semibold"> / one-time audit</span>
                 </div>
 
@@ -186,7 +186,7 @@ export const DetectiveAgencyPage: React.FC = () => {
                     : 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90'
                 }`}
               >
-                Book Confidential Audit (${pkg.price})
+                Book Confidential Audit (₹{pkg.price.toLocaleString('en-IN')})
               </button>
             </div>
           ))}

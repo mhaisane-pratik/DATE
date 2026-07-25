@@ -155,7 +155,7 @@ export const BrowseCoaches: React.FC = () => {
               <div>
                 <div className="flex justify-between items-center text-xs mb-1">
                   <label className="font-bold text-slate-700 dark:text-slate-300">Max Session Price</label>
-                  <span className="font-bold text-indigo-600 dark:text-indigo-400">${priceMax}/hr</span>
+                  <span className="font-bold text-indigo-600 dark:text-indigo-400">₹{priceMax.toLocaleString('en-IN')}/hr</span>
                 </div>
                 <input
                   type="range"
@@ -318,7 +318,7 @@ export const BrowseCoaches: React.FC = () => {
             </div>
 
             <div className="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-800">
-              <div className="text-lg font-black text-slate-900 dark:text-white">${previewCoach.hourlyRate}/50m</div>
+              <div className="text-lg font-black text-slate-900 dark:text-white">₹{previewCoach.hourlyRate.toLocaleString('en-IN')}/50m</div>
               <button
                 onClick={() => {
                   setSelectedCoachId(previewCoach.id);

@@ -15,7 +15,7 @@ export const WorkshopsPage: React.FC = () => {
       speakerAvatar: '/images/prateek_user.png',
       date: 'Sunday, August 2, 2026',
       time: '06:00 PM - 08:00 PM IST',
-      price: 29,
+      price: 1499,
       attendees: 142,
       maxSeats: 200,
       image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=800&auto=format&fit=crop',
@@ -32,7 +32,7 @@ export const WorkshopsPage: React.FC = () => {
       speakerAvatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&auto=format&fit=crop',
       date: 'Saturday, August 8, 2026',
       time: '05:00 PM - 07:30 PM IST',
-      price: 49,
+      price: 2499,
       attendees: 98,
       maxSeats: 150,
       image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=800&auto=format&fit=crop',
@@ -71,7 +71,7 @@ export const WorkshopsPage: React.FC = () => {
               <div className="relative h-48 rounded-2xl overflow-hidden">
                 <img src={ws.image} alt={ws.title} className="w-full h-full object-cover" />
                 <span className="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-white font-black text-xs">
-                  ${ws.price} / Seat
+                  ₹{ws.price.toLocaleString('en-IN')} / Seat
                 </span>
               </div>
 
@@ -114,7 +114,7 @@ export const WorkshopsPage: React.FC = () => {
               onClick={() => handleBookTicket(ws)}
               className="w-full py-3.5 rounded-xl text-xs font-extrabold text-white gradient-bg shadow-lg flex items-center justify-center gap-2"
             >
-              <Ticket className="w-4 h-4" /> Reserve Live Seat (${ws.price})
+              <Ticket className="w-4 h-4" /> Reserve Live Seat (₹{ws.price.toLocaleString('en-IN')})
             </button>
           </div>
         ))}

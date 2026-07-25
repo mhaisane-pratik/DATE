@@ -149,7 +149,7 @@ export const AdminDashboard: React.FC = () => {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="glass-card bg-white dark:bg-slate-800/90 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-700/80">
                   <div className="text-xs font-bold text-slate-400 uppercase mb-1">Gross Marketplace GMV</div>
-                  <div className="text-2xl font-black text-slate-900 dark:text-white">$482,500</div>
+                  <div className="text-2xl font-black text-slate-900 dark:text-white">₹4,825,000</div>
                   <span className="text-[10px] text-emerald-500 font-bold">+31% YOY Growth</span>
                 </div>
 
@@ -208,7 +208,7 @@ export const AdminDashboard: React.FC = () => {
                           <span>{coach.name}</span>
                         </td>
                         <td className="py-3 text-slate-500">{coach.title}</td>
-                        <td className="py-3 font-bold">${coach.hourlyRate}</td>
+                        <td className="py-3 font-bold">₹{coach.hourlyRate.toLocaleString('en-IN')}</td>
                         <td className="py-3">
                           <span className={`px-2 py-0.5 rounded-full text-[10px] font-extrabold ${coach.isVerified ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-400' : 'bg-amber-100 text-amber-700'}`}>
                             {coach.isVerified ? 'Verified' : 'Pending'}

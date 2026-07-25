@@ -63,7 +63,7 @@ export const MOCK_DETECTIVE_PACKAGES: DetectivePackage[] = [
   {
     id: 'pkg-basic',
     title: 'Pre-Dating Background Verification',
-    price: 199,
+    price: 9999,
     description: 'Discreet background check before committing or getting serious with an online match.',
     features: [
       'Identity & Employment Verification',
@@ -76,7 +76,7 @@ export const MOCK_DETECTIVE_PACKAGES: DetectivePackage[] = [
   {
     id: 'pkg-pro',
     title: 'Pre-Marital Comprehensive Audit',
-    price: 499,
+    price: 24999,
     isPopular: true,
     description: 'In-depth pre-wedding background investigation for families and couples to ensure total peace of mind.',
     features: [
@@ -91,7 +91,7 @@ export const MOCK_DETECTIVE_PACKAGES: DetectivePackage[] = [
   {
     id: 'pkg-elite',
     title: 'Partner Loyalty & Infidelity Investigation',
-    price: 899,
+    price: 49999,
     description: 'Discreet digital and field surveillance for suspected infidelity or marital breach.',
     features: [
       'Digital Footprint & Secret Account Discovery',
@@ -114,7 +114,7 @@ export const MOCK_COACHES: Coach[] = [
     rating: 4.99,
     reviewsCount: 348,
     experienceYears: 10,
-    hourlyRate: 150,
+    hourlyRate: 4999,
     languages: ['English', 'Hindi'],
     categories: ['dating-mindset', 'detective-verification', 'online-dating-profiles', 'communication', 'marriage-longterm'],
     bio: 'Hi, I am Prateek Mhaisane—founder of DateMentor. In addition to 1-on-1 dating strategy and Gottman relationship counseling, I oversee our 100% confidential Detective & Verification Agency division, empowering clients with absolute clarity, relationship safety, and emotional peace of mind.',
@@ -155,7 +155,7 @@ export const MOCK_COACHES: Coach[] = [
     rating: 4.96,
     reviewsCount: 112,
     experienceYears: 14,
-    hourlyRate: 180,
+    hourlyRate: 6999,
     languages: ['English', 'Hindi', 'Marathi'],
     categories: ['detective-verification'],
     bio: 'Former intelligence analyst working under Prateek Mhaisane\'s DateMentor Detective Agency. Specialized in confidential pre-marital background checks, financial audits, and discreet partner verification.',
@@ -184,7 +184,7 @@ export const MOCK_COACHES: Coach[] = [
     rating: 4.97,
     reviewsCount: 142,
     experienceYears: 12,
-    hourlyRate: 140,
+    hourlyRate: 3999,
     languages: ['English', 'Spanish'],
     categories: ['attachment-styles', 'communication', 'marriage-longterm'],
     bio: 'Handpicked by Prateek Mhaisane for DateMentor, Dr. Vance brings clinical psychology expertise to help couples and singles understand hidden attachment wounds and rebuild marital intimacy.',
@@ -192,7 +192,7 @@ export const MOCK_COACHES: Coach[] = [
     skills: ['Attachment Repair', 'Conflict Resolution', 'Emotional Safety'],
     isVerified: true,
     isAvailableToday: true,
-    location: 'New York, USA',
+    location: 'New York / Global Remote',
     featured: true,
     stats: {
       clientsCoached: 540,
@@ -278,9 +278,9 @@ export const MOCK_USER_SESSIONS: BookingSession[] = [
     timeSlot: '02:00 PM - 02:50 PM',
     sessionType: 'video',
     durationMinutes: 50,
-    price: 150,
-    discount: 30,
-    totalPrice: 120,
+    price: 4999,
+    discount: 1000,
+    totalPrice: 3999,
     status: 'upcoming',
     meetingLink: 'https://meet.datementor.com/room-prateek-101',
     notes: '1-on-1 Strategy Session with Prateek Mhaisane: Profile & Dating Mindset'

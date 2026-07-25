@@ -110,11 +110,12 @@ export const CoachCard: React.FC<CoachCardProps> = ({ coach }) => {
       {/* Footer: Price & Book Button */}
       <div className="flex items-center justify-between pt-3 border-t border-slate-100 dark:border-slate-800/80">
         <div>
-          <span className="text-xs text-slate-500 dark:text-slate-400">Session Rate</span>
-          <div className="text-base font-extrabold text-slate-900 dark:text-slate-100">
-            ${coach.hourlyRate}
-            <span className="text-xs font-normal text-slate-500 dark:text-slate-400">/50m</span>
-          </div>
+            <div className="text-[10px] uppercase tracking-wider font-extrabold text-indigo-600 dark:text-indigo-400">
+              Session Rate
+            </div>
+            <div className="text-xl font-black text-slate-900 dark:text-white">
+              ₹{coach.hourlyRate.toLocaleString('en-IN')}<span className="text-xs font-normal text-slate-400">/50m</span>
+            </div>
         </div>
 
         <button

@@ -139,26 +139,26 @@ export const CoachDashboard: React.FC = () => {
               {/* Revenue Cards Row */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                 <div className="glass-card bg-white dark:bg-slate-800/90 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-700/80">
-                  <div className="text-xs font-bold text-slate-400 uppercase mb-1">Total Earnings</div>
-                  <div className="text-2xl font-black text-slate-900 dark:text-white">$14,850</div>
-                  <span className="text-[10px] text-emerald-500 font-bold">+24% vs last month</span>
+                  <div className="text-xs font-bold text-slate-400 uppercase mb-1">Total Coaching Earnings</div>
+                  <div className="text-2xl font-black text-slate-900 dark:text-white">₹1,485,000</div>
+                  <span className="text-[10px] text-emerald-500 font-bold">+18% this month</span>
                 </div>
 
                 <div className="glass-card bg-white dark:bg-slate-800/90 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-700/80">
-                  <div className="text-xs font-bold text-slate-400 uppercase mb-1">Completed Calls</div>
-                  <div className="text-2xl font-black text-slate-900 dark:text-white">184 Sessions</div>
-                  <span className="text-[10px] text-indigo-500 font-bold">100% completion</span>
+                  <div className="text-xs font-bold text-slate-400 uppercase mb-1">Client Sessions Completed</div>
+                  <div className="text-2xl font-black text-slate-900 dark:text-white">96 Sessions</div>
+                  <span className="text-[10px] text-indigo-500 font-bold">4.99 Average Rating</span>
                 </div>
 
                 <div className="glass-card bg-white dark:bg-slate-800/90 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-700/80">
-                  <div className="text-xs font-bold text-slate-400 uppercase mb-1">Average Rating</div>
-                  <div className="text-2xl font-black text-amber-500">4.98 / 5.0</div>
-                  <span className="text-[10px] text-slate-400">142 reviews</span>
+                  <div className="text-xs font-bold text-slate-400 uppercase mb-1">Current Base Rate</div>
+                  <div className="text-2xl font-black text-amber-500">₹4,999 / 50m</div>
+                  <span className="text-[10px] text-slate-400">Top Tier Strategist</span>
                 </div>
 
                 <div className="glass-card bg-white dark:bg-slate-800/90 rounded-2xl p-5 border border-slate-200/80 dark:border-slate-700/80">
                   <div className="text-xs font-bold text-slate-400 uppercase mb-1">Hourly Rate</div>
-                  <div className="text-2xl font-black text-slate-900 dark:text-white">$140/50m</div>
+                  <div className="text-2xl font-black text-slate-900 dark:text-white">₹4,999/50m</div>
                   <span className="text-[10px] text-purple-500 font-bold">Top tier status</span>
                 </div>
               </div>

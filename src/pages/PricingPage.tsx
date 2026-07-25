@@ -1,184 +1,144 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Sparkles, HelpCircle, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, Sparkles, ShieldCheck, Zap, ArrowRight, HelpCircle } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import { Breadcrumb } from '../components/common/Breadcrumb';
 
 export const PricingPage: React.FC = () => {
-  const { setCurrentPage, addToast } = useApp();
-  const [isAnnual, setIsAnnual] = useState(true);
+  const { setCurrentPage } = useApp();
+  const [isAnnual, setIsAnnual] = useState(false);
 
-  const handleSelectPlan = (planName: string) => {
-    addToast({
-      type: 'success',
-      title: `${planName} Plan Selected`,
-      message: `You selected the ${planName} membership plan. Proceeding to coach selection.`
-    });
-    setCurrentPage('browse');
-  };
+  const plans = [
+    {
+      id: 'starter',
+      name: 'Starter Coaching',
+      priceMonthly: 2499,
+      priceAnnual: 1999,
+      description: 'Ideal for singles looking to optimize their dating profiles and gain clarity.',
+      features: [
+        '1 Session / month with Associate Coach',
+        'AI Dating Profile Audit & Bio Rewrite',
+        'Access to Live Group Masterclasses',
+        'WhatsApp Community Access'
+      ]
+    },
+    {
+      id: 'pro',
+      name: 'Pro Relationship Pass',
+      priceMonthly: 7499,
+      priceAnnual: 5999,
+      isPopular: true,
+      description: 'Our most popular plan for active dating, confidence building, & pre-marital clarity.',
+      features: [
+        '3 Sessions / month with Coach Prateek Mhaisane',
+        '100% Pre-Dating Background Verification Check',
+        'Unlimited AI Profile Rewrites & Chat Strategy',
+        'Priority Session Booking & WhatsApp Line',
+        'Gottman Attachment Style PDF Report'
+      ]
+    },
+    {
+      id: 'elite',
+      name: 'VIP Executive & Verification',
+      priceMonthly: 19999,
+      priceAnnual: 15999,
+      description: 'Full-spectrum 1-on-1 coaching, couples therapy, and complete Detective Agency due diligence.',
+      features: [
+        'Unlimited 1-on-1 Coaching with Prateek Mhaisane',
+        'Full Pre-Marital Background & Loyalty Audit',
+        'Dedicated Private Investigator assigned',
+        'VIP Matchmaking Introductions',
+        '24/7 Encrypted WhatsApp Hotline'
+      ]
+    }
+  ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-      <Breadcrumb items={[{ label: 'Pricing Plans' }]} />
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 space-y-12">
+      <Breadcrumb items={[{ label: 'Membership Plans & Pricing' }]} />
 
-      {/* Header */}
-      <div className="text-center max-w-2xl mx-auto mb-12 space-y-4">
-        <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 text-xs font-extrabold uppercase">
-          <Sparkles className="w-3.5 h-3.5" /> Transparent Membership Pricing
+      <div className="text-center max-w-xl mx-auto space-y-4">
+        <span className="px-3 py-1 rounded-full bg-indigo-50 dark:bg-indigo-950 text-indigo-600 dark:text-indigo-400 text-xs font-extrabold uppercase border border-indigo-200 dark:border-indigo-800">
+          Transparent Indian Rupee (INR) Pricing
         </span>
-        <h1 className="text-3xl sm:text-5xl font-black text-slate-900 dark:text-white">
-          Invest in Your <span className="gradient-text">Relational Future</span>
+        <h1 className="text-3xl sm:text-4xl font-black text-slate-900 dark:text-white">
+          Simple Plans for Every Relationship Goal
         </h1>
-        <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-          Select a membership tier or pay per 1-on-1 coaching session. All memberships include direct messaging & 24/7 video room access.
+        <p className="text-xs sm:text-sm text-slate-500">
+          Transparent monthly and annual coaching memberships. No hidden fees. Cancel anytime.
         </p>
 
-        {/* Monthly vs Annual Toggle */}
-        <div className="pt-4 flex items-center justify-center gap-3">
-          <span className={`text-xs font-bold ${!isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
-            Monthly Billing
-          </span>
+        {/* Toggle */}
+        <div className="inline-flex items-center gap-3 p-1.5 rounded-2xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
           <button
-            onClick={() => setIsAnnual(!isAnnual)}
-            className="w-12 h-6 rounded-full bg-indigo-600 p-1 relative transition-colors"
+            onClick={() => setIsAnnual(false)}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
+              !isAnnual ? 'bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-md' : 'text-slate-500'
+            }`}
           >
-            <div
-              className={`w-4 h-4 rounded-full bg-white transition-transform ${isAnnual ? 'translate-x-6' : 'translate-x-0'}`}
-            />
+            Monthly Billing
           </button>
-          <span className={`text-xs font-bold flex items-center gap-1 ${isAnnual ? 'text-slate-900 dark:text-white' : 'text-slate-400'}`}>
-            Annual Billing
-            <span className="px-2 py-0.5 rounded-full bg-emerald-500 text-white font-extrabold text-[9px] uppercase">
-              Save 20%
-            </span>
-          </span>
+          <button
+            onClick={() => setIsAnnual(true)}
+            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1 ${
+              isAnnual ? 'bg-indigo-600 text-white shadow-md' : 'text-slate-500'
+            }`}
+          >
+            Annual (Save 20%) <Sparkles className="w-3 h-3 text-amber-300" />
+          </button>
         </div>
       </div>
 
-      {/* 3 Pricing Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-        {/* Starter Plan */}
-        <div className="glass-card bg-white dark:bg-slate-800/90 rounded-3xl p-8 border border-slate-200/80 dark:border-slate-700/80 shadow-lg flex flex-col justify-between">
-          <div>
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white">Starter</h3>
-            <p className="text-xs text-slate-500 mt-1">Perfect for singles taking their first step into coaching.</p>
-            
-            <div className="my-6">
-              <span className="text-4xl font-black text-slate-900 dark:text-white">
-                ${isAnnual ? '29' : '39'}
-              </span>
-              <span className="text-xs text-slate-400 font-semibold">/month</span>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {plans.map((plan) => {
+          const price = isAnnual ? plan.priceAnnual : plan.priceMonthly;
+          return (
+            <div
+              key={plan.id}
+              className={`glass-card bg-white dark:bg-slate-800/90 rounded-3xl p-8 border flex flex-col justify-between relative ${
+                plan.isPopular ? 'border-2 border-indigo-500 shadow-2xl scale-105' : 'border-slate-200 dark:border-slate-700'
+              }`}
+            >
+              {plan.isPopular && (
+                <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-bg text-white font-black text-[10px] uppercase shadow-md">
+                  Most Popular
+                </span>
+              )}
+
+              <div>
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white">{plan.name}</h3>
+                <p className="text-xs text-slate-500 mt-1">{plan.description}</p>
+
+                <div className="my-6">
+                  <span className="text-4xl font-black text-slate-900 dark:text-white">
+                    ₹{price.toLocaleString('en-IN')}
+                  </span>
+                  <span className="text-xs text-slate-400 font-semibold"> / month</span>
+                </div>
+
+                <ul className="space-y-3 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-6">
+                  {plan.features.map((feat, i) => (
+                    <li key={i} className="flex items-center gap-2.5">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                      <span>{feat}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <button
+                onClick={() => setCurrentPage('register')}
+                className={`w-full mt-8 py-3.5 rounded-xl text-xs font-bold transition-all ${
+                  plan.isPopular
+                    ? 'gradient-bg text-white font-black shadow-lg hover:opacity-95'
+                    : 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 hover:opacity-90'
+                }`}
+              >
+                Get Started with {plan.name}
+              </button>
             </div>
-
-            <ul className="space-y-3 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-6">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>1 Coaching Session / Month Included</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Access to All Verified Coaches</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Standard Chat Support</span>
-              </li>
-            </ul>
-          </div>
-
-          <button
-            onClick={() => handleSelectPlan('Starter')}
-            className="w-full mt-8 py-3 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 transition-colors"
-          >
-            Select Starter Plan
-          </button>
-        </div>
-
-        {/* Premium Plan (POPULAR) */}
-        <div className="glass-card bg-slate-900 text-white rounded-3xl p-8 border-2 border-indigo-500 shadow-2xl relative flex flex-col justify-between">
-          <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full gradient-bg text-white font-extrabold text-[10px] uppercase tracking-wider shadow-md">
-            Most Popular Choice
-          </div>
-
-          <div>
-            <h3 className="text-lg font-bold text-white">Premium</h3>
-            <p className="text-xs text-slate-400 mt-1">Ideal for active dating, relationship building, & couples.</p>
-            
-            <div className="my-6">
-              <span className="text-4xl font-black text-white">
-                ${isAnnual ? '79' : '99'}
-              </span>
-              <span className="text-xs text-slate-400 font-semibold">/month</span>
-            </div>
-
-            <ul className="space-y-3 text-xs text-slate-300 border-t border-slate-800 pt-6">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
-                <span><strong>3 Sessions / Month</strong> Included</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
-                <span>Priority HD Video Room Bandwidth</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
-                <span>Direct 24/7 Chat with Your Coach</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-indigo-400 shrink-0" />
-                <span>Dating Profile Audit & Rewrite</span>
-              </li>
-            </ul>
-          </div>
-
-          <button
-            onClick={() => handleSelectPlan('Premium')}
-            className="w-full mt-8 py-3.5 rounded-xl text-xs font-extrabold text-white gradient-bg shadow-xl hover:opacity-95 transition-opacity"
-          >
-            Get Premium Access
-          </button>
-        </div>
-
-        {/* Elite Plan */}
-        <div className="glass-card bg-white dark:bg-slate-800/90 rounded-3xl p-8 border border-slate-200/80 dark:border-slate-700/80 shadow-lg flex flex-col justify-between">
-          <div>
-            <h3 className="text-lg font-bold text-slate-900 dark:text-white">Elite VIP</h3>
-            <p className="text-xs text-slate-500 mt-1">Unlimited executive coaching & emergency relational guidance.</p>
-            
-            <div className="my-6">
-              <span className="text-4xl font-black text-slate-900 dark:text-white">
-                ${isAnnual ? '199' : '249'}
-              </span>
-              <span className="text-xs text-slate-400 font-semibold">/month</span>
-            </div>
-
-            <ul className="space-y-3 text-xs text-slate-700 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-6">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span><strong>Unlimited Monthly 1-on-1 Sessions</strong></span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Co-Coaching Duo for Couples</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Same-Day Emergency Calling Slot</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Dedicated Relationship Concierge</span>
-              </li>
-            </ul>
-          </div>
-
-          <button
-            onClick={() => handleSelectPlan('Elite')}
-            className="w-full mt-8 py-3 rounded-xl text-xs font-bold text-slate-800 dark:text-slate-200 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 transition-colors"
-          >
-            Join Elite VIP
-          </button>
-        </div>
+          );
+        })}
       </div>
     </div>
   );

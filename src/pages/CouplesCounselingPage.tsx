@@ -37,7 +37,7 @@ export const CouplesCounselingPage: React.FC = () => {
               }}
               className="px-6 py-3.5 rounded-xl text-xs font-extrabold text-white gradient-bg shadow-xl"
             >
-              Book Joint Couples Session ($150)
+              Book Joint Couples Session (₹4,999)
             </button>
           </div>
         </div>
