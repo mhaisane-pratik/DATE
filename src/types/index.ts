@@ -18,7 +18,11 @@ export type PageId =
   | 'terms'
   | 'detective-agency'
   | 'quiz'
-  | 'couples-counseling';
+  | 'couples-counseling'
+  | 'ai-auditor'
+  | 'case-tracker'
+  | 'workshops'
+  | 'attachment-test';
 
 export type UserRole = 'user' | 'coach' | 'admin';
 
@@ -129,4 +133,17 @@ export interface DetectivePackage {
   description: string;
   features: string[];
   isPopular?: boolean;
+}
+
+export interface Workshop {
+  id: string;
+  title: string;
+  speaker: string;
+  date: string;
+  time: string;
+  price: number;
+  attendeesCount: number;
+  summary: string;
+  topics: string[];
+  image: string;
 }

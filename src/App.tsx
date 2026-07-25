@@ -5,6 +5,7 @@ import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { QuickPageSwitcher } from './components/common/QuickPageSwitcher';
 import { ToastContainer } from './components/common/Toast';
+import { WhatsAppWidget } from './components/common/WhatsAppWidget';
 
 // Pages
 import { Home } from './pages/Home';
@@ -27,6 +28,10 @@ import { TermsPage } from './pages/TermsPage';
 import { DetectiveAgencyPage } from './pages/DetectiveAgencyPage';
 import { CouplesCounselingPage } from './pages/CouplesCounselingPage';
 import { QuizPage } from './pages/QuizPage';
+import { AiProfileAuditorPage } from './pages/AiProfileAuditorPage';
+import { CaseTrackerPage } from './pages/CaseTrackerPage';
+import { WorkshopsPage } from './pages/WorkshopsPage';
+import { AttachmentTestPage } from './pages/AttachmentTestPage';
 
 const MainRouter: React.FC = () => {
   const { currentPage } = useApp();
@@ -39,6 +44,14 @@ const MainRouter: React.FC = () => {
         return <BrowseCoaches />;
       case 'detective-agency':
         return <DetectiveAgencyPage />;
+      case 'case-tracker':
+        return <CaseTrackerPage />;
+      case 'ai-auditor':
+        return <AiProfileAuditorPage />;
+      case 'workshops':
+        return <WorkshopsPage />;
+      case 'attachment-test':
+        return <AttachmentTestPage />;
       case 'couples-counseling':
         return <CouplesCounselingPage />;
       case 'quiz':
@@ -87,6 +100,7 @@ const MainRouter: React.FC = () => {
       </div>
       <Footer />
       <ToastContainer />
+      <WhatsAppWidget />
     </div>
   );
 };

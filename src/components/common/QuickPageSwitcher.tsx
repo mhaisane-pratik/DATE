@@ -11,23 +11,23 @@ export const QuickPageSwitcher: React.FC = () => {
     { id: 'home', label: '1. Home Page', group: 'Main' },
     { id: 'browse', label: '2. Browse Coaches', group: 'Main' },
     { id: 'detective-agency', label: '3. Detective Agency 🕵️‍♂️', group: 'Specialty' },
-    { id: 'couples-counseling', label: '4. Couples Counseling 💑', group: 'Specialty' },
-    { id: 'quiz', label: '5. Assessment Quiz 🎯', group: 'Specialty' },
-    { id: 'coach-profile', label: '6. Coach Profile', group: 'Main' },
-    { id: 'booking', label: '7. Booking Page Wizard', group: 'Main' },
-    { id: 'user-dashboard', label: '8. User Dashboard', group: 'Dashboards' },
-    { id: 'coach-dashboard', label: '9. Coach Dashboard', group: 'Dashboards' },
-    { id: 'admin-dashboard', label: '10. Admin Dashboard', group: 'Dashboards' },
-    { id: 'pricing', label: '11. Pricing Page', group: 'Information' },
-    { id: 'about', label: '12. About Us', group: 'Information' },
-    { id: 'contact', label: '13. Contact Us', group: 'Information' },
-    { id: 'blog', label: '14. Blog & Articles', group: 'Content' },
-    { id: 'help', label: '15. Help Center', group: 'Content' },
-    { id: 'login', label: '16. Login Page', group: 'Auth' },
-    { id: 'register', label: '17. Register Page', group: 'Auth' },
-    { id: 'forgot-password', label: '18. Forgot Password', group: 'Auth' },
-    { id: 'privacy', label: '19. Privacy Policy', group: 'Legal' },
-    { id: 'terms', label: '20. Terms & Conditions', group: 'Legal' }
+    { id: 'case-tracker', label: '4. Case Tracker 🔒', group: 'Specialty' },
+    { id: 'ai-auditor', label: '5. AI Profile Auditor 🤖', group: 'Tools' },
+    { id: 'workshops', label: '6. Live Masterclasses 🎟️', group: 'Events' },
+    { id: 'attachment-test', label: '7. Attachment Quiz 💖', group: 'Tools' },
+    { id: 'couples-counseling', label: '8. Couples Therapy 💑', group: 'Specialty' },
+    { id: 'quiz', label: '9. Match Quiz 🎯', group: 'Tools' },
+    { id: 'coach-profile', label: '10. Coach Profile', group: 'Main' },
+    { id: 'booking', label: '11. Booking Wizard', group: 'Main' },
+    { id: 'user-dashboard', label: '12. User Dashboard', group: 'Dashboards' },
+    { id: 'coach-dashboard', label: '13. Coach Dashboard', group: 'Dashboards' },
+    { id: 'admin-dashboard', label: '14. Admin Dashboard', group: 'Dashboards' },
+    { id: 'pricing', label: '15. Pricing Page', group: 'Information' },
+    { id: 'about', label: '16. About Us', group: 'Information' },
+    { id: 'contact', label: '17. Contact Us', group: 'Information' },
+    { id: 'blog', label: '18. Blog & Articles', group: 'Content' },
+    { id: 'help', label: '19. Help Center', group: 'Content' },
+    { id: 'login', label: '20. Login Page', group: 'Auth' }
   ];
 
   return (
@@ -40,11 +40,11 @@ export const QuickPageSwitcher: React.FC = () => {
             <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
           </span>
           <span className="font-extrabold tracking-wide text-indigo-200 uppercase text-[9px] sm:text-[10px]">
-            Demo Navigator
+            Demo Navigator (24 Pages)
           </span>
         </div>
 
-        {/* Center: Dropdown to pick all 20 pages */}
+        {/* Center: Dropdown */}
         <div className="relative flex-1 max-w-[200px] sm:max-w-xs">
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -60,7 +60,7 @@ export const QuickPageSwitcher: React.FC = () => {
           {isOpen && (
             <div className="absolute top-full left-0 right-0 sm:right-auto sm:w-64 max-h-80 overflow-y-auto glass-card bg-slate-900/95 border border-indigo-500/40 rounded-xl shadow-2xl p-2 z-50">
               <div className="text-[10px] font-bold uppercase tracking-wider text-slate-400 px-2 py-1 border-b border-slate-800">
-                Jump to Any of 20 Pages
+                Jump to Any Page
               </div>
               <div className="py-1">
                 {pages.map((p) => (
